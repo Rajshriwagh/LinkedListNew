@@ -19,5 +19,6 @@ public class App {
 		list.deletFromStart();
 		
 		list.deleteFromEnd();
+		list.searchElement();
 	}
 }

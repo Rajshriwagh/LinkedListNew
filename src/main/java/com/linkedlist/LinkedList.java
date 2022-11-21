@@ -5,7 +5,6 @@ public class LinkedList<T> {
 	Node<T> temp;
 	int position = 0;
 
-
 	public void addNode(T data) {
 		// Create a new node
 		Node<T> newNode = new Node<>(data);
@@ -57,63 +56,89 @@ public class LinkedList<T> {
 		}
 		position++;
 	}
+
 	// To add new node at any given position
-		void insert(int index, T data) {
-			// Checking if position is valid
-			if (index > position + 1) {
-				System.out.print("Position Unavailable in LinkedList");
-				return;
-			}
-			// If new position is head then replace head node
-			if (index == 1) {
-				Node<T> temp = head;      // Temporary node that stores previous head
-				head = new Node<T>(data); // New valued node stored in head
-				head.next = temp;         // New head node pointing to old head node
-				return;
-			}
-			Node<T> temp = head;          // Temporary node for traversal
-			Node<T> prev = new Node<T>(null);// Dummy node with null value that stores previous
-			// iterating to the given position
-			while (index - 1 > 0) {
-				prev = temp;     // assigning previous node
-				temp = temp.next;// incrementing next node
-				index--;
-			}
-			prev.next = new Node<T>(data);	// previous node now points to new value
-			prev.next.next = temp;          // new value now points to former current node
+	void insert(int index, T data) {
+		// Checking if position is valid
+		if (index > position + 1) {
+			System.out.print("Position Unavailable in LinkedList");
+			return;
 		}
-		//Delete first node of the list
-		  void popFirst() {
-		    if(this.head != null) {
-		    	Node<T> temp = this.head;
-		      this.head = this.head.next;
-		      temp = null;  
-		    }
-		  }
-		  public void popLast() {
-				Node<T> temp = head;
-				Node<T> tail = head.next;
-				// Checks if the list is empty
-				if (head == null) {
-					System.out.println("List is empty");
-					return;
-				}
-				//to remove last element of list if list contain more than one element
-				while (temp != null && tail != null) {
-					//once tail.next becomes null change second last node as tail
-					if (tail.next == null) {
-						tail = temp;
-						//remove last element
-						temp.next=null;
-					}
-					tail = tail.next;
-					temp = temp.next;
-				}
-				//if list contains only one element
-				if (head.next == null)
-					tail = head;
-				return;
+		// If new position is head then replace head node
+		if (index == 1) {
+			Node<T> temp = head; // Temporary node that stores previous head
+			head = new Node<T>(data); // New valued node stored in head
+			head.next = temp; // New head node pointing to old head node
+			return;
+		}
+		Node<T> temp = head; // Temporary node for traversal
+		Node<T> prev = new Node<T>(null);// Dummy node with null value that stores previous
+		// iterating to the given position
+		while (index - 1 > 0) {
+			prev = temp; // assigning previous node
+			temp = temp.next;// incrementing next node
+			index--;
+		}
+		prev.next = new Node<T>(data); // previous node now points to new value
+		prev.next.next = temp; // new value now points to former current node
+	}
+
+	// Delete first node of the list
+	void popFirst() {
+		if (this.head != null) {
+			Node<T> temp = this.head;
+			this.head = this.head.next;
+			temp = null;
+		}
+	}
+
+	public void popLast() {
+		Node<T> temp = head;
+		Node<T> tail = head.next;
+		// Checks if the list is empty
+		if (head == null) {
+			System.out.println("List is empty");
+			return;
+		}
+		// to remove last element of list if list contain more than one element
+		while (temp != null && tail != null) {
+			// once tail.next becomes null change second last node as tail
+			if (tail.next == null) {
+				tail = temp;
+				// remove last element
+				temp.next = null;
 			}
+			tail = tail.next;
+			temp = temp.next;
+		}
+		// if list contains only one element
+		if (head.next == null)
+			tail = head;
+		return;
+	}
+
+	/*
+	 * Search given element into Linked List and returns it's particular node if
+	 * found else returns null
+	 */
+	public Node<T> search(T data) {
+		Node<T> temp = head;
+		if (head == null) {
+			return null;
+		}
+
+		// While loop is used to search the entire Linked
+		while (temp != null) {
+
+			// Returns the node of that particular element,if found.
+			if (temp.data == data) {
+				return temp;
+			}
+			temp = temp.next;
+		}
+		// Returns null if the element is not found
+		return null;
+	}
 
 	// method will display all the nodes present in the list
 	public void display() {
