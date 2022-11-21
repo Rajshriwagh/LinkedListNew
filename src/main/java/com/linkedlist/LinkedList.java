@@ -139,26 +139,65 @@ public class LinkedList<T> {
 		// Returns null if the element is not found
 		return null;
 	}
-	//To find index of given element
-		public int index(T data) {
-			int index=1;
-			Node<T> temp = head;
-			if (head == null) {
-				return -1;//if list is empty
-			}
+	//returns size of the linked list
+	  public int size() {
+	    int length = 0;
+	    Node<T> temp = head;
+	    while (temp != null) {
+	      temp = temp.next;
+	      length++;
+	    }
+	    return length;
+	  }
 
-			// While loop is used to search the entire Linked
-			while (temp != null) {
-
-				// Returns the index of that particular element,if found.
-				if (temp.data == data) {
-					return index;
-				}
-				index++;
-				temp = temp.next;
-			}
-			return -1;// Returns -1 if the element is not found
+	// To find index of given element
+	public int index(T data) {
+		int index = 1;
+		Node<T> temp = head;
+		if (head == null) {
+			return -1;// if list is empty
 		}
+
+		// While loop is used to search the entire Linked
+		while (temp != null) {
+
+			// Returns the index of that particular element,if found.
+			if (temp.data == data) {
+				return index;
+			}
+			index++;
+			temp = temp.next;
+		}
+		return -1;// Returns -1 if the element is not found
+	}
+
+	public boolean deleteNode(T data) {
+		// Store head node
+		Node<T> temp = head, prev = null;
+
+		// If head node itself holds the data to be deleted
+		if (temp != null && temp.data == data) {
+			head = temp.next;
+			return true;
+		}
+
+		// Search for the element to be deleted, keep track of
+		// the previous node as we need to change temp.next
+		while (temp != null && temp.data != data) {
+			prev = temp;
+			temp = temp.next;
+		}
+
+		// If data was not present in linked list
+		if (temp == null) {
+			return false;
+		}
+
+		// Unlink the node from linked list
+		prev.next = temp.next;
+		return true;
+
+	}
 
 	// method will display all the nodes present in the list
 	public void display() {

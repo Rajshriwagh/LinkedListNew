@@ -94,4 +94,20 @@ public class MyLinkedList {
 			System.out.println(listObject);
 
 		}
+		public void deleteElement() {
+			listObject = new LinkedList<>();
+			listObject.append(56);
+			listObject.append(30);
+			listObject.append(40);
+			listObject.append(70);
+			System.out.println(listObject);
+			boolean result=listObject.deleteNode(40);
+			if (result==false) {
+				System.out.println("Element Not Found");
+			} else {
+				System.out.println("Element is delete from list");
+				System.out.println(listObject);
+			}
+			System.out.println("Linked list size is " +listObject.size());
+		}
 }
