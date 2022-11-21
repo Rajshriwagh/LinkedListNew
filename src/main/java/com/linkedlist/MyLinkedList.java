@@ -15,6 +15,16 @@ public class MyLinkedList {
 		listObject.insertAtTop(70);
 		listObject.insertAtTop(30);
 		listObject.insertAtTop(56);
+		listObject.insertAtTop(58);
+		System.out.println(listObject);
+	}
+	public void addDataAtLast() {
+		listObject = new LinkedList<>();
+		listObject.append(56);
+		listObject.append(30);
+		listObject.append(70);
+		listObject.append(71);
 		System.out.println(listObject);
 	}
 }
+

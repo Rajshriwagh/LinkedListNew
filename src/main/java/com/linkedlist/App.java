@@ -8,5 +8,7 @@ public class App {
 		list.addData();
 		System.out.println("Adding node at start of the linked list");
 		list.addDataAtStart();
+		System.out.println("Adding node at last of the linked list");
+		list.addDataAtLast();
 	}
 }
