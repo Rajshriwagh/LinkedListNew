@@ -70,12 +70,28 @@ public class MyLinkedList {
 		listObject.append(30);
 		listObject.append(70);
 		System.out.println(listObject);
-		Node<Integer> node = listObject.search(80);
+		Node<Integer> node = listObject.search(30);
 		if (node == null) {
-			System.out.println("Element Not Found");
+			System.out.println("Element Not Found from above linkedlist");
 		} else {
-			System.out.println("Element present in linked list ");
+			System.out.println("Element present in above linkedlist ");
 
 		}
 	}
+	// Insert Element After Given Element
+		public void insertAfterElement() {
+			listObject = new LinkedList<>();
+			listObject.append(56);
+			listObject.append(30);
+			listObject.append(70);
+			System.out.println(listObject);
+			int position = listObject.index(30);
+			if (position == -1) {
+				System.out.println("Element Not Found");
+			} else {
+				listObject.insert(position + 1, 40);
+			}
+			System.out.println(listObject);
+
+		}
 }
