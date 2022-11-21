@@ -12,5 +12,6 @@ public class App {
 		list.addNodeAtLast();
 		System.out.println("Adding node at given position of linkedlist");
 		list.insertNodeInBetween();
+		list.popFront();
 	}
 }

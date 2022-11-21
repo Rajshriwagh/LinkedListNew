@@ -82,6 +82,15 @@ public class LinkedList<T> {
 			prev.next = new Node<T>(data);	// previous node now points to new value
 			prev.next.next = temp;          // new value now points to former current node
 		}
+		//Delete first node of the list
+		  void pop() {
+		    if(this.head != null) {
+		    	Node<T> temp = this.head;
+		      this.head = this.head.next;
+		      temp = null;  
+		    }
+		  }
+
 
 	// method will display all the nodes present in the list
 	public void display() {

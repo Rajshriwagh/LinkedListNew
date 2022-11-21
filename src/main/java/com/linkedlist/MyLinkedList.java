@@ -37,5 +37,17 @@ public class MyLinkedList {
         System.out.println("list of Object after");
         System.out.println(listObject);
     }
+	public void popFront() {
+		listObject = new LinkedList<>();
+        listObject.append(56);
+        listObject.append(30);
+        listObject.append(70);
+        System.out.println(listObject);
+        listObject.pop();
+        System.out.println("printing list after deleting first node");
+        System.out.println(listObject);
+        
+		
+	}
 }
 
