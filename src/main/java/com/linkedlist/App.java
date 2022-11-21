@@ -4,11 +4,9 @@ public class App {
 	public static void main(String[] args) {
 		System.out.println("Welcome To LinkedList Implementation!");
 		// Creating new empty Integer linked list
-		LinkedList<Integer> listObject = new LinkedList<>();
-		listObject.addNode(56);
-		listObject.addNode(30);
-		listObject.addNode(70);
-		listObject.display();
-
+		MyLinkedList list = new MyLinkedList();
+		list.addData();
+		System.out.println("Adding node at start of the linked list");
+		list.addDataAtStart();
 	}
 }

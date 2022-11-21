@@ -20,6 +20,19 @@ public class LinkedList<T> {
 			temp = newNode;
 		}
 	}
+	void insertAtTop(T data) {
+		Node<T> node = new Node<T>(data);
+		node.data = data;
+		node.next = null;
+		if (head == null) {
+			head = node;
+		} else {
+			Node<T> temp;
+			temp = head;
+			head = node;
+			head.next = temp;
+		}
+	}
 
 	// method will display all the nodes present in the list
 	public void display() {
@@ -35,4 +48,24 @@ public class LinkedList<T> {
 			temp = temp.next;
 		}
 	}
+	// To display the LinkedList
+    //@Override
+    public String toString()
+    {
+ 
+        String S="";
+ 
+        Node<T> temp = head;
+ 
+        if (temp == null)
+            return S;
+ 
+        while (temp.next != null) {
+            S += String.valueOf(temp.data) + " -> ";
+            temp = temp.next;
+        }
+ 
+        S += String.valueOf(temp.data);
+        return S;
+    }
 }
