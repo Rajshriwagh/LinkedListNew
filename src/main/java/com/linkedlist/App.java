@@ -7,11 +7,17 @@ public class App {
 		MyLinkedList list = new MyLinkedList();
 		list.addData();
 		System.out.println("Adding node at start of the linkedlist");
+		
 		list.addNodeAtStart();
 		System.out.println("Adding node at last of the linkedlist");
+		
 		list.addNodeAtLast();
 		System.out.println("Adding node at given position of linkedlist");
+		
 		list.insertNodeInBetween();
-		list.popFront();
+		
+		list.deletFromStart();
+		
+		list.deleteFromEnd();
 	}
 }

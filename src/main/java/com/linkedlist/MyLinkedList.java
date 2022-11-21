@@ -37,17 +37,26 @@ public class MyLinkedList {
         System.out.println("list of Object after");
         System.out.println(listObject);
     }
-	public void popFront() {
+	public void deletFromStart() {
 		listObject = new LinkedList<>();
         listObject.append(56);
         listObject.append(30);
         listObject.append(70);
         System.out.println(listObject);
-        listObject.pop();
+        listObject.popFirst();
         System.out.println("printing list after deleting first node");
         System.out.println(listObject);
         
-		
+		}
+	public void deleteFromEnd() {
+		listObject = new LinkedList<>();
+        listObject.append(56);
+        listObject.append(30);
+        listObject.append(70);
+        System.out.println(listObject);
+        listObject.popLast();
+        System.out.println("printing list after deleting last node");
+        System.out.println(listObject); 	
 	}
 }
 
