@@ -110,4 +110,12 @@ public class MyLinkedList {
 			}
 			System.out.println("Linked list size is " +listObject.size());
 		}
+		public void orderdList() {
+			SortedLinkedList<Integer> orderedList= new SortedLinkedList<>();
+			orderedList.add(56);
+			orderedList.add(30);
+			orderedList.add(40);
+			orderedList.add(70);
+			System.out.println(orderedList);
+		}
 }
