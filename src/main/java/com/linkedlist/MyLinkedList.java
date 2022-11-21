@@ -10,7 +10,7 @@ public class MyLinkedList {
 		listObject.display();
 	}
 
-	void addDataAtStart() {
+	void addNodeAtStart() {
 		listObject = new LinkedList<>();
 		listObject.insertAtTop(70);
 		listObject.insertAtTop(30);
@@ -18,7 +18,7 @@ public class MyLinkedList {
 		listObject.insertAtTop(58);
 		System.out.println(listObject);
 	}
-	public void addDataAtLast() {
+	public void addNodeAtLast() {
 		listObject = new LinkedList<>();
 		listObject.append(56);
 		listObject.append(30);
@@ -26,5 +26,16 @@ public class MyLinkedList {
 		listObject.append(71);
 		System.out.println(listObject);
 	}
+	public void insertNodeInBetween() {
+		listObject = new LinkedList<>();
+        listObject.append(56);
+        listObject.append(30);
+        listObject.append(70);
+        System.out.println("list of Object before");
+        System.out.println(listObject);
+        listObject.insert(2,40);
+        System.out.println("list of Object after");
+        System.out.println(listObject);
+    }
 }
 

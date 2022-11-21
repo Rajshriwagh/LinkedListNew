@@ -3,6 +3,8 @@ package com.linkedlist;
 public class LinkedList<T> {
 	Node<T> head;
 	Node<T> temp;
+	int position = 0;
+
 
 	public void addNode(T data) {
 		// Create a new node
@@ -53,7 +55,33 @@ public class LinkedList<T> {
 			}
 			temp.next = node; // Adding new valued node at the end of the list
 		}
+		position++;
 	}
+	// To add new node at any given position
+		void insert(int index, T data) {
+			// Checking if position is valid
+			if (index > position + 1) {
+				System.out.print("Position Unavailable in LinkedList");
+				return;
+			}
+			// If new position is head then replace head node
+			if (index == 1) {
+				Node<T> temp = head;      // Temporary node that stores previous head
+				head = new Node<T>(data); // New valued node stored in head
+				head.next = temp;         // New head node pointing to old head node
+				return;
+			}
+			Node<T> temp = head;          // Temporary node for traversal
+			Node<T> prev = new Node<T>(null);// Dummy node with null value that stores previous
+			// iterating to the given position
+			while (index - 1 > 0) {
+				prev = temp;     // assigning previous node
+				temp = temp.next;// incrementing next node
+				index--;
+			}
+			prev.next = new Node<T>(data);	// previous node now points to new value
+			prev.next.next = temp;          // new value now points to former current node
+		}
 
 	// method will display all the nodes present in the list
 	public void display() {
