@@ -5,7 +5,7 @@ public class App {
 		System.out.println("Welcome To Implemented LinkedList!");
 		// Creating new empty Integer linked list
 		MyLinkedList list = new MyLinkedList();
-		list.addData();
+		/*list.addData();
 		System.out.println("Adding node at start of the linkedlist");
 		
 		list.addNodeAtStart();
@@ -23,6 +23,7 @@ public class App {
 		list.insertAfterElement();
 		list.deleteElement();
 		list.orderdList();
-		list.implementStack();
+		list.implementStack();*/
+		list.implementQueue();
 	}
 }

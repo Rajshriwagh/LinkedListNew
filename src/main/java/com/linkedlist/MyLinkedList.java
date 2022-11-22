@@ -3,6 +3,7 @@ package com.linkedlist;
 public class MyLinkedList {
 	LinkedList<Integer> listObject;
 	Stack<Integer> stack;
+	Queue<Integer> queue;
 	
 	void addData() {
 		listObject = new LinkedList<>();
@@ -132,5 +133,13 @@ public class MyLinkedList {
 	        System.out.println("poping first item from stack");
 	        stack.pop();
 	        stack.printStack();
+		}
+		public void implementQueue() {
+			queue=new Queue<>();
+			queue.enqueue(56);
+			queue.enqueue(30);
+			queue.enqueue(70);
+			System.out.println("print elements of Queue");
+	        queue.printQueue();
 		}
 }
