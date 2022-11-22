@@ -141,5 +141,8 @@ public class MyLinkedList {
 			queue.enqueue(70);
 			System.out.println("print elements of Queue");
 	        queue.printQueue();
+	        int elementAtFront=(int)queue.dequeue();
+	        System.out.println("Element at the top of Queue "+elementAtFront);
+	        queue.printQueue();
 		}
 }
