@@ -84,7 +84,7 @@ public class LinkedList<T> {
 	}
 
 	// Delete first node of the list
-	void popFirst() {
+	public void pop() {
 		if (this.head != null) {
 			Node<T> temp = this.head;
 			this.head = this.head.next;

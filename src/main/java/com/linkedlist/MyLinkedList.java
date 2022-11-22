@@ -2,7 +2,8 @@ package com.linkedlist;
 
 public class MyLinkedList {
 	LinkedList<Integer> listObject;
-
+	Stack<Integer> stack;
+	
 	void addData() {
 		listObject = new LinkedList<>();
 		listObject.addNode(56);
@@ -47,7 +48,7 @@ public class MyLinkedList {
 		listObject.append(30);
 		listObject.append(70);
 		System.out.println(listObject);
-		listObject.popFirst();
+		listObject.pop();
 		System.out.println("printing list after deleting first node");
 		System.out.println(listObject);
 
@@ -119,12 +120,17 @@ public class MyLinkedList {
 			System.out.println(orderedList);
 		}
 		public void implementStack() {
-			Stack<Integer> stack=new Stack<>();
-	        System.out.println("Initialized stack");
+			stack=new Stack<>();
 	        stack.push(70);
 	        stack.push(30);
 	        stack.push(56);
-	        System.out.println("printing pushed items in stack");
+	        System.out.println("printing elements in stack");
+	        stack.printStack();
+	        System.out.println("peeking stack");
+	        int topAtElement=(int)stack.peek();
+	        System.out.println("Element at the top of stack "+topAtElement);
+	        System.out.println("poping first item from stack");
+	        stack.pop();
 	        stack.printStack();
 		}
 }
